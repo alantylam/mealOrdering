@@ -14,15 +14,10 @@ public class Order {
 	public int fishFree;
 	public int others;
 	
-	private Scanner reader = new Scanner(System.in);
+	public Scanner reader = new Scanner(System.in);
 	
-	// When this class is created as an object, it will prompt for user's input for order
-	public Order() {
-		receivingOrder();
-	}
-
 	// Gather order from user
-	private void receivingOrder() {
+	public void receivingOrder() {
 		
 		System.out.print("\n---Processing Order---\nPlease enter number of meals needed: ");
 		this.numOfOrders = reader.nextInt();
@@ -46,9 +41,21 @@ public class Order {
 		confirmation();
 	}
 	
+	// Same as method above, except it is strictly used for test mode.
+	public void receivingOrder(int nO, int v, int g, int n, int f) {
+		this.numOfOrders = nO;
+		
+		// Collecting Dietary Restrictions data (such as vegetarian, gluten free, nut free, and fish free) 
+		this.vegetarian = v;
+		this.glutenFree = g;
+		this.nutFree = n;
+		this.fishFree = f;
+		this.others = this.numOfOrders - this.vegetarian - this.glutenFree - this.nutFree - this.fishFree;
+	}
+	
 	// This method is used to confirm, cancel or edit order depends on user's input
 	private void confirmation() {
-		printOrder(0);
+		printOrder(-1);
 		System.out.print("Enter Y to confirm, E to edit order, N to cancel order and exit program: ");
 		
 		String input = reader.next();
@@ -72,11 +79,14 @@ public class Order {
 	// This method will print out the detail of the our order before or after our confirmation
 	public void printOrder(int mode) {
 		// 0 is before we confirm our order, any # is after we confirm.
-		if (mode == 0) {
+		if (mode == -1) {
 			System.out.print("\nOrder Confirmation:");
 		}
-		else {
+		else if (mode == -2) {
 			System.out.print("\nOrder's Detail:");
+		}
+		else {
+			System.out.print("\nOrder-" + mode + "'s Detail:");
 		}
 		System.out.print("\nTotal # of meals = " + this.numOfOrders + "\n# of Vegetarian Meal(s) = " + this.vegetarian + "\n# of Gluten-Free Meal(s) = " + this.glutenFree + "\n# of Nut-Free Meal(s) = " + this.nutFree + "\n# of Fish-Free Meal(s) = " + this.fishFree + "\n# of Other Meal(s) = " + this.others + "\n" );
 	}

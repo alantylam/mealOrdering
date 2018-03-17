@@ -45,7 +45,7 @@ public class RestaurantInput {
 			bufferedReader.close();
 			fileReader.close();
 		} catch (IOException e) {
-			System.out.println("File does not exist!");
+			System.out.println("Restaurant input file does not exist!");
 			System.exit(0);
 		}
 		

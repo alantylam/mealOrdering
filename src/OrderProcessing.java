@@ -124,7 +124,7 @@ public class OrderProcessing {
 	
 	// Print out orders for different restaurant based off the result we got from the algorithm above
 	public void printRestaurantsOrders() {
-		System.out.println();
+		System.out.println("\n---Solution---START---\n");
 		for (int i = 0; i < this.restaurantsOrders.size(); i++) {
 			RestaurantOrder ro = this.restaurantsOrders.get(i);
 			
@@ -146,6 +146,7 @@ public class OrderProcessing {
 			
 			System.out.println();
 		}
+		System.out.println("\n---Solution---END---\n");
 	}
 	
 	public boolean orderFulfilled() {
