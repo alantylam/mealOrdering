@@ -1,0 +1,16 @@
+This program is designed to resolve the following problem:
+
+We're ordering meals for a team lunch. Every member in the team needs one meal, some have dietary restrictions such as vegetarian, gluten free, nut free, and fish free. We have a list of restaurants which serve meals that satisfy some of these restrictions. Each restaurant has a rating, and a limited amount of meals in stock that they can make today. Implement an object oriented system with automated tests that can automatically produce the best possible meal orders with reasonable assumptions.
+
+**Example:
+Team needs: total 50 meals including 5 vegetarians and 7 gluten free.
+Restaurants: Restaurant A has a rating of 5/5 and can serve 40 meals including 4 vegetarians,
+Restaurant B has a rating of 3/5 and can serve 100 meals including 20 vegetarians, and 20 gluten free.
+Expected meal orders: Restaurant A (4 vegetarian + 36 others), Restaurant B (1 vegetarian + 7 gluten free + 2 others)
+
+
+RestaurantList.txt's format
+Name,Rating of the Restaurant,Max Order Limit,# of Available Vegetarian Meals,# of Available Gluten-free Meals,# of Available Nut-free Meals,# of Available Fish-free Meals
+
+OrderList.txt's format
+Total # of meals,# of Vegetarian Meals,# of Gluten-free Meals,# of Nut-free Meals,# of Fish-free Meals
