@@ -8,9 +8,10 @@ Restaurants: Restaurant A has a rating of 5/5 and can serve 40 meals including 4
 Restaurant B has a rating of 3/5 and can serve 100 meals including 20 vegetarians, and 20 gluten free.
 Expected meal orders: Restaurant A (4 vegetarian + 36 others), Restaurant B (1 vegetarian + 7 gluten free + 2 others)
 
-
 RestaurantList.txt's format
 Name,Rating of the Restaurant,Max Order Limit,# of Available Vegetarian Meals,# of Available Gluten-free Meals,# of Available Nut-free Meals,# of Available Fish-free Meals
 
 OrderList.txt's format
 Total # of meals,# of Vegetarian Meals,# of Gluten-free Meals,# of Nut-free Meals,# of Fish-free Meals
+
+**Main function is in MealOrder.java
